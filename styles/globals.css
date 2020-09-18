@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.5;
 }
 
 a {
@@ -13,4 +14,156 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.container{
+  overflow: auto;
+}
+
+pre>code{
+    display: block;
+    background: rgb(31, 31, 31);
+    color: rgb(201, 201, 201);
+    padding: 20px;
+    font-family: sans-serif;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.spanRed{
+  color:tomato;
+}
+
+.spanGray{
+  color: gray;
+}
+
+.spanTag{
+  color: rgb(255, 0, 200);
+}
+
+.spanTag::before{
+  content: '`';
+}
+
+.spanTag::after{
+  content: '`';
+}
+
+.blue {
+  color: rgb(49, 155, 255);
+}
+
+.note{
+  display: block;
+  padding: 20px;
+  background: rgb(247, 247, 247);
+  margin-bottom: 20px;
+  color: gray;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+
+.list{
+  padding-left: 20px;
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: .5em;
+  background: #232323;
+  color: #e6e1dc
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #bc9458;
+  font-style: italic
+}
+
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #c26230
+}
+
+.hljs-number,
+.hljs-regexp,
+.hljs-string,
+.hljs-template-variable,
+.hljs-variable {
+  color: #a5c261
+}
+
+.hljs-subst {
+  color: #519f50
+}
+
+.hljs-name,
+.hljs-tag {
+  color: #e8bf6a
+}
+
+.hljs-type {
+  color: #da4939
+}
+
+.hljs-attr,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-bullet,
+.hljs-link,
+.hljs-symbol {
+  color: #6d9cbe
+}
+
+.hljs-params {
+  color: #d0d0ff
+}
+
+.hljs-attribute {
+  color: #cda869
+}
+
+.hljs-meta {
+  color: #9b859d
+}
+
+.hljs-section,
+.hljs-title {
+  color: #ffc66d
+}
+
+.hljs-addition {
+  background-color: #144212;
+  color: #e6e1dc;
+  display: inline-block;
+  width: 100%
+}
+
+.hljs-deletion {
+  background-color: #600;
+  color: #e6e1dc;
+  display: inline-block;
+  width: 100%
+}
+
+.hljs-selector-class {
+  color: #9b703f
+}
+
+.hljs-selector-id {
+  color: #8b98ab
+}
+
+.hljs-emphasis {
+  font-style: italic
+}
+
+.hljs-strong {
+  font-weight: 700
+}
+
+.hljs-link {
+  text-decoration: underline
 }

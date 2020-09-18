@@ -57,6 +57,13 @@
   text-align: center;
 }
 
+img.logo{
+  width: 200px;
+  height: auto;
+  margin-bottom: -32px;
+  margin-left: 10px;
+}
+
 .description {
   line-height: 1.5;
   font-size: 1.5rem;

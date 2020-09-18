@@ -1,0 +1,40 @@
+.link{
+  
+  margin-bottom: 2px;
+  
+}
+
+.link a{
+  display: block;
+  background: rgb(245, 245, 245);
+  padding:10px;
+  border-radius: 10px;
+  &:hover{
+    background: rgb(230, 230, 230);
+  }
+}
+
+.hide{
+  display: none;
+}
+
+.show{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-left: 1px solid lightgray;
+  margin-left: 10px;
+  padding-left: 5px;
+
+  a{
+    margin-bottom: 2px;
+    background: rgb(235, 235, 235);
+  }
+}
+
+.active{
+ 
+ a:first-child{
+    cursor: pointer;
+    background: rgb(235, 235, 235);
+ }
+}
