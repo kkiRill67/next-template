@@ -1,10 +1,11 @@
 import useSWR from 'swr'
-import sidebar from '../../styles/Sidebar.module.scss'
+import {apiref} from '../../apiref'
 import List from '../List/List'
+import React, {useMemo} from 'react'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
-export default function ApiRef() {
+function ApiRef() {
     const { data, error } = useSWR('/api/apiref', fetcher)
 
     if (error) return <div>Failed to load</div>
@@ -14,8 +15,10 @@ export default function ApiRef() {
         <div >
             <h3>Справочник по API</h3>
             {
-                data.map((p, i) => (<List key={i} lists={p} />))
+                apiref.map((p, i) => (<List key={i} lists={p} />))
             }
         </div>
     )
 }
+
+export default React.memo(ApiRef)

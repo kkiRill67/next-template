@@ -1,8 +1,12 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import link from '../../styles/Link.module.scss'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 
-export default function List({lists}) {
+import styles from './List.module.css'
+
+function List({ lists }) {
+    const router = useRouter()
 
     const [show, setShow] = useState(true)
     const [name, setName] = useState(lists.name)
@@ -18,12 +22,16 @@ export default function List({lists}) {
     
   return (
       <div className={link.link}>
+        {console.log(router.route)}
+        {console.log(lists)}
         {
-            !lists.show ? <Link href={lists.id}><a>{lists.name}</a></Link> :
-            <div><Link key={lists.id} href=''><a onClick={handleShow}>&rsaquo; {lists.name}</a></Link>
-            <div className={!show ? link.show : link.hide}>{lists.links.map(p => {
+            lists.show === false ? <Link href={lists.id}><a className={router.route === lists.id ? styles.activeLink : ''}>{lists.name}</a></Link> :
+        <div><Link key={lists.id} href=''><a onClick={handleShow}>{show === false ? <span>&rsaquo;</span> : <span>&darr;</span>} {lists.name}</a></Link>
+            <div className={show === true ? link.show : link.hide}>{lists.links.map(p => {
                              return(
-                                <Link key={p.id} href={p.id}><a> {p.name}</a></Link> 
+                                <Link key={p.id} href={p.id}>
+                                  <a className={router.route === p.id ? styles.activeLink : ''} > {p.name}</a>
+                                </Link> 
                              )
                          })}</div>
             </div>
@@ -31,3 +39,5 @@ export default function List({lists}) {
       </div>
   )
 }
+
+export default React.memo(List)

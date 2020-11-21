@@ -10,21 +10,21 @@ export default () => {
 Next.js имеет маршрутизатор на основе файловой системы, построенный на концепции страниц.
             </p>
 <p>
-Когда файл добавляется в pages каталог, он автоматически становится доступным в качестве маршрута.
+Когда файл добавляется в <span className="spanTag">pages</span> каталог, он автоматически становится доступным в качестве маршрута.
 </p>
 <p>
-Файлы внутри pages каталога можно использовать для определения наиболее распространенных шаблонов.
+Файлы внутри <span className="spanTag">pages</span> каталога можно использовать для определения наиболее распространенных шаблонов.
 </p>
 
 <h4>Указать маршруты</h4>
 
-Маршрутизатор автоматически направит файлы с указанными именами indexв корень каталога.
+Маршрутизатор автоматически направит файлы с указанными именами <span className="spanTag">index</span> в корень каталога.
 
 <p className='list'>
- - pages/index.js → /
+ - <span className="spanTag">pages/index.js</span> → <span className="spanTag">/</span>
 </p>
 <p className='list'>
- - pages/blog/index.js → /blog
+ - <span className="spanTag">pages/blog/index.js</span> → <span className="spanTag">/blog</span>
 </p>
 
 <h4>Вложенные маршруты</h4>
@@ -32,10 +32,10 @@ Next.js имеет маршрутизатор на основе файловой
 Маршрутизатор поддерживает вложенные файлы. Если вы создадите вложенную структуру папок, файлы будут автоматически маршрутизироваться таким же образом.
 
 <p className='list'>
- - pages/blog/first-post.js → /blog/first-post
+ - <span className="spanTag">pages/blog/first-post.js</span> → <span className="spanTag">/blog/first-post</span>
 </p>
 <p className='list'>
- - pages/dashboard/settings/username.js → /dashboard/settings/username
+ - <span className="spanTag">pages/dashboard/settings/username.js</span> → <span className="spanTag">/dashboard/settings/username</span>
 </p>
 
 
@@ -45,13 +45,13 @@ Next.js имеет маршрутизатор на основе файловой
 Чтобы сопоставить динамический сегмент, вы можете использовать синтаксис скобок. Это позволяет вам сопоставлять именованные параметры.
 
 <p className='list'>
- - pages/blog/[slug].js→ /blog/:slug( /blog/hello-world)
+ - <span className="spanTag">pages/blog/[slug].js</span> → <span className="spanTag">/blog/:slug</span> (/blog/hello-world)
 </p>
 <p className='list'>
- - pages/[username]/settings.js→ /:username/settings( /foo/settings)
+ - <span className="spanTag">pages/[username]/settings.js</span> → <span className="spanTag">/:username/settings</span> (/foo/settings)
 </p>
 <p className='list'>
- - pages/post/[...all].js→ /post/*( /post/2020/id/title)
+ - <span className="spanTag">pages/post/[...all].js</span> → <span className="spanTag">/post/*</span> (/post/2020/id/title)
 </p>
 
 
@@ -62,7 +62,7 @@ Next.js имеет маршрутизатор на основе файловой
 Маршрутизатор Next.js позволяет выполнять переходы маршрутов между страницами на стороне клиента, как в одностраничном приложении.
 </p>
 
-Для Link выполнения этого перехода маршрута на стороне клиента предоставляется вызываемый компонент React .
+Для <span className="spanTag">Link</span> выполнения этого перехода маршрута на стороне клиента предоставляется вызываемый компонент React.
 
 <Highlight language="javascript">
     {`import Link from 'next/link'
@@ -88,13 +88,13 @@ export default Home`}
 </Highlight>
 
 <p>
-При связывании с маршрутом с сегментами динамического пути вы должны предоставить href и as убедиться, что маршрутизатор знает, какой файл JavaScript загружать.
+При связывании с маршрутом с сегментами динамического пути вы должны предоставить <span className="spanTag">href</span> и <span className="spanTag">as</span> убедиться, что маршрутизатор знает, какой файл JavaScript загружать.
 </p>
 <p className='list'>
- - href - Название страницы в pagesкаталоге. Например /blog/[slug].
+ - <span className="spanTag">href</span> - Название страницы в pagesкаталоге. Например <span className="spanTag">/blog/[slug]</span>.
 </p>
 <p className='list'>
- - as - URL-адрес, который будет отображаться в браузере. Например /blog/hello-world.
+ - <span className="spanTag">as</span> - URL-адрес, который будет отображаться в браузере. Например <span className="spanTag">/blog/hello-world</span>.
 </p>
 
 
@@ -117,7 +117,7 @@ function Home() {
 export default Home`}
 </Highlight>
 
-as Опора может также быть сгенерированы динамически. Например, чтобы показать список сообщений, которые были переданы на страницу в качестве опоры:
+<span className="spanTag">as</span> Опора может также быть сгенерированы динамически. Например, чтобы показать список сообщений, которые были переданы на страницу в качестве опоры:
 
 <Highlight language="javascript">
     {`function Home({ posts }) {
@@ -137,8 +137,8 @@ as Опора может также быть сгенерированы дина
 
 <h2>Внедрение роутера</h2>
 
-Для доступа к router объекту в компоненте React вы можете использовать useRouter или withRouter.
-<p>В общем, мы рекомендуем использовать useRouter.</p>
+Для доступа к <span className="spanTag">router</span> объекту в компоненте React вы можете использовать <span className="spanTag">useRouter</span> или <span className="spanTag">withRouter</span>.
+<p>В общем, мы рекомендуем использовать <span className="spanTag">useRouter</span>.</p>
 
             </div>
         </Docs>

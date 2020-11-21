@@ -1,136 +1,136 @@
 export const apiref = [
     {
-      id: '/docs/apiref/cli',
+      id: '/docs/api-reference/cli',
       name: `CLI`,
       show: false
     },
     {
-      id: '/docs/apiref/cna',
+      id: '/docs/api-reference/create-next-app',
       name: `Create Next App`,
       show: false
     },
     {
-      id: '/docs/apiref/next/router',
+      id: '/docs/api-reference/next/router',
       name: `next/router`,
       show: false
     },
     {
-      id: '/docs/apiref/next/link',
+      id: '/docs/api-reference/next/link',
       name: `next/link`,
       show: false
     },
     {
-      id: '/docs/apiref/next/head',
+      id: '/docs/api-reference/next/head',
       name: `next/head`,
       show: false
     },
     {
-      id: '/docs/apiref/next/amp',
+      id: '/docs/api-reference/next/amp',
       name: `next/amp`,
       show: false
     },
     {
-      id: '/docs/apiref/fetching',
+      id: '/docs/api-reference/fetching',
       name: `Получение данных`,
       show: true,
       links: [
         {
-          id: '/docs/apiref/getInitialProps',
+          id: '/docs/api-reference/getInitialProps',
           name: `getInitialProps`
         }
       ]
     },
     {
-      id: '/docs/apiref/nextconfig',
+      id: '/docs/api-reference/nextconfig',
       name: `next.config.js`,
       show: true,
       links: [
         {
-          id: '/docs/nextconfig/introduction',
+          id: '/docs/api-reference/next.config.js/introduction',
           name: `Введение`
         },
         {
-          id: '/docs/nextconfig/variables',
+          id: '/docs/api-reference/next.config.js/environment-variables',
           name: `Переменные окружения`
         },
         {
-          id: '/docs/nextconfig/basepath',
+          id: '/docs/api-reference/next.config.js/basepath',
           name: `Базовый путь`
         },
         {
-          id: '/docs/nextconfig/rewrites',
+          id: '/docs/api-reference/next.config.js/rewrites',
           name: `Перезапись`
         },
         {
-          id: '/docs/nextconfig/redirects',
+          id: '/docs/api-reference/next.config.js/redirects',
           name: `Перенаправления`
         },
         {
-          id: '/docs/nextconfig/headers',
+          id: '/docs/api-reference/next.config.js/headers',
           name: `Пользовательский Header`
         },
         {
-          id: '/docs/nextconfig/extensions',
+          id: '/docs/api-reference/next.config.js/custom-page-extensions',
           name: `Пользовательские расширения страниц`
         },
         {
-          id: '/docs/nextconfig/cdnsupport',
+          id: '/docs/api-reference/next.config.js/cdn-support-with-asset-prefix',
           name: `Поддержка CDN с префиксом`
         },
         {
-          id: '/docs/nextconfig/buildtarget',
+          id: '/docs/api-reference/next.config.js/build-target',
           name: `Build Target`
         },
         {
-          id: '/docs/nextconfig/webpack',
+          id: '/docs/api-reference/next.config.js/custom-webpack-config',
           name: `Пользовательский Webpack config`
         },
         {
-          id: '/docs/nextconfig/compression',
+          id: '/docs/api-reference/next.config.js/compression',
           name: `Сжатие`
         },
         {
-          id: '/docs/nextconfig/indicatoroptimization',
+          id: '/docs/api-reference/next.config.js/static-optimization-indicator',
           name: `Индикатор статической оптимизации`
         },
         {
-          id: '/docs/nextconfig/runtime',
+          id: '/docs/api-reference/next.config.js/runtime-configuration',
           name: `Runtime Configuration`
         },
         {
-          id: '/docs/nextconfig/disablingpowered',
+          id: '/docs/api-reference/next.config.js/disabling-x-powered-by',
           name: `Отключение x-powered-by`
         },
         {
-          id: '/docs/nextconfig/disablingetag',
+          id: '/docs/api-reference/next.config.js/disabling-etag-generation',
           name: `Отключение генерации ETag`
         },
         {
-          id: '/docs/nextconfig/builddirectory',
+          id: '/docs/api-reference/next.config.js/setting-a-custom-build-directory',
           name: `Установка пользовательского каталога сборки`
         },
         {
-          id: '/docs/nextconfig/buildid',
+          id: '/docs/api-reference/next.config.js/configuring-the-build-id',
           name: `Настройка идентификатора сборки`
         },
         {
-          id: '/docs/nextconfig/onDemandEntries',
+          id: '/docs/api-reference/next.config.js/configuring-onDemandEntries',
           name: `Настройка onDemandEntries`
         },
         {
-          id: '/docs/nextconfig/typescripterrors',
+          id: '/docs/api-reference/next.config.js/ignoring-typescript-errors',
           name: `Игнорирование ошибок TypeScript`
         },
         {
-          id: '/docs/nextconfig/exportPathMap',
+          id: '/docs/api-reference/next.config.js/exportPathMap',
           name: `exportPathMap`
         },
         {
-          id: '/docs/nextconfig/trailingSlash',
+          id: '/docs/api-reference/next.config.js/trailing-slash',
           name: `trailingSlash`
         },
         {
-          id: '/docs/nextconfig/reactStrictMode',
+          id: '/docs/api-reference/next.config.js/react-strict-mode',
           name: `Режим React Strict`
         }
       ]

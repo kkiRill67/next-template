@@ -81,7 +81,7 @@ export const lists = [
           },
           {
             id: '/docs/api-routes/api-middlewares',
-            name: `ПО промежуточного слоя API`
+            name: `API Middlewares`
           },
           {
             id: '/docs/api-routes/response-helpers',
