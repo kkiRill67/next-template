@@ -9,10 +9,18 @@ img.logo{
   display: flex;
   align-items: center;
 
+  .big{
+    border: none;
+    margin-right: 5px;
+    font-weight: bold;
+    font-size: 22px;
+  }
+
   span{
     border: 2px solid black;
     border-radius: 5px;
     padding: 2px;
+    font-size: 10px;
   }
 }
 

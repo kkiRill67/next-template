@@ -34,8 +34,8 @@ export default () => {
 
 <p><span className="spanTag"><strong>getStaticProps</strong></span> должен вернуть объект с:</p>
 
-<p className="list"> - <span className="spanTag">props</span> - это требуется объект с реквизитом , которые будут получены с помощью компонента страницы. Это должен быть сериализуемый объект</p>
-<p className="list"> - <span className="spanTag">revalidate</span> - Необязательное количество секунд, после которого может произойти повторное создание страницы. Подробнее об инкрементальной статической регенерации</p>
+<p className="list"> - <span className="spanTag">props</span> - Обязательный объект со свойствами, которые получит компонент страницы. Он должен быть сериализуемый объектом</p>
+<p className="list"> - <span className="spanTag">revalidate</span> - Необязательное количество секунд, после которого может произойти повторное создание страницы.</p>
 
 <div className="note">
 <strong>Примечание:</strong> вы можете импортировать модули в области верхнего уровня для использования в <span className="spanTag">getStaticProps</span>. Импорты, используемые в <span className="spanTag">getStaticProps</span>, не будут объединены для клиентской стороны.
@@ -115,7 +115,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 </Highlight>
 
 
-Если вы хотите получить предполагаемую типизацию для своих реквизитов, вы можете использовать <span className="spanTag">InferGetStaticPropsType{`<typeof getStaticProps>`}</span>, например:
+Если вы хотите получить предполагаемую типизацию для своих props, вы можете использовать <span className="spanTag">InferGetStaticPropsType{`<typeof getStaticProps>`}</span>, например:
 
 
 <Highlight language="javascript">{`import { InferGetStaticPropsType } from 'next'
@@ -149,10 +149,10 @@ export default Blog`}</Highlight>
 </div>
 
 <p>
-С <span className="spanTag">getStaticProps</span> вами не должны прекратить полагаться на динамическое содержимое, так как статический контент также может быть динамическим . Постепенная статическая регенерация позволяет обновлять существующие страницы, повторно отображая их в фоновом режиме по мере поступления трафика.
+С <span className="spanTag">getStaticProps</span> вам не нужно переставать полагаться на динамический контент, так как статический контент также может быть динамическим. Постепенная статическая регенерация позволяет обновлять существующие страницы, повторно отображая их в фоновом режиме по мере поступления трафика.
 </p>
 <p>
-Фоновая регенерация, вдохновленная устаревшей при повторной валидации , обеспечивает бесперебойное обслуживание трафика, всегда из статического хранилища, а вновь созданная страница отправляется только после завершения генерации.
+Фоновая регенерация обеспечивает бесперебойное обслуживание трафика, всегда из статического хранилища, а вновь созданная страница отправляется только после завершения генерации.
 </p>
 
 <p>
@@ -302,7 +302,7 @@ export default Blog`}
 Когда страница с <span className="spanTag">getStaticProps</span> предварительно визуализируется во время сборки, в дополнение к файлу HTML страницы Next.js генерирует файл JSON, содержащий результат выполнения <span className="spanTag">getStaticProps</span>.
 </p>
 <p>
-Этот файл JSON будет использоваться при маршрутизации на стороне клиента через <span className="spanTag">next/link</span>( документацию ) или <span className="spanTag">next/router</span>( документацию ). Когда вы переходите на страницу, предварительно отрисованную с использованием <span className="spanTag">getStaticProps</span>, Next.js извлекает этот файл JSON (предварительно вычисленный во время сборки) и использует его в качестве свойств для компонента страницы. Это означает , что переходы на стороне клиента страница будет не называть, <span className="spanTag">getStaticProps</span> как используется только на экспорт в формате JSON.
+Этот файл JSON будет использоваться при маршрутизации на стороне клиента через <span className="spanTag">next/link</span>( документацию ) или <span className="spanTag">next/router</span>( документацию ). Когда вы переходите на страницу, предварительно отрисованную с использованием <span className="spanTag">getStaticProps</span>, Next.js извлекает этот файл JSON (предварительно вычисленный во время сборки) и использует его в качестве свойств для компонента страницы. Это означает, что переходы страниц на стороне клиента не будут вызывать getStaticProps, поскольку используется только экспортированный JSON.
 </p>
 
 
@@ -334,7 +334,7 @@ export default Blog`}
 
 <h2><span className="spanTag">getStaticPaths</span> (Статическая генерация)</h2>
 <p>
-Если страница имеет динамические маршруты ( документация ) и использует <span className="spanTag">getStaticProps</span> ее, необходимо определить список путей, которые должны отображаться в HTML во время сборки.
+Если страница имеет динамические маршруты ( документация ) и использует <span className="spanTag">getStaticProps</span>, ей необходимо определить список путей, которые должны отображаться в HTML во время сборки.
 </p>
 <p>
 Если вы экспортируете <span className="spanTag">async</span> функцию, вызываемую <span className="spanTag">getStaticPaths</span> со страницы, которая использует динамические маршруты, Next.js будет статически предварительно визуализировать все пути, указанные в <span className="spanTag">getStaticPaths</span>.
@@ -355,7 +355,7 @@ export default Blog`}
 
 <h4><span className="spanTag">paths</span> Ключ (обязательно)</h4>
 
-В <span className="spanTag">paths</span> ключе определяет, какие пути будут предварительно оказаны. Например, предположим, что у вас есть страница, использующая динамические маршруты с именем <span className="spanTag">pages/posts/[id].js</span>. Если вы экспортируете <span className="spanTag">getStaticPaths</span> с этой страницы и вернете следующее для <span className="spanTag">paths</span>:
+Ключ <span className="spanTag">paths</span> определяет, какие пути будут предварительно отрисованы. Например, предположим, что у вас есть страница, использующая динамические маршруты с именем <span className="spanTag">pages/posts/[id].js</span>. Если вы экспортируете <span className="spanTag">getStaticPaths</span> с этой страницы и вернете следующее для <span className="spanTag">paths</span>:
 
 
 <Highlight language="javascript">
@@ -369,20 +369,20 @@ export default Blog`}
 </Highlight>
 
 <p>
-Затем Next.js будет статически сгенерирован <span className="spanTag">posts/1</span> и <span className="spanTag">posts/2</span> во время сборки с использованием компонента страницы в <span className="spanTag">pages/posts/[id].js</span>.
+Затем Next.js будет статически генерировать <span className="spanTag">posts/1</span> и <span className="spanTag">posts/2</span> во время сборки, используя компонент страницы в <span className="spanTag">pages/posts/[id].js</span>.
 </p>
 <p>
-Обратите внимание, что значение для каждого paramsдолжно соответствовать параметрам, используемым в имени страницы:
+Обратите внимание, что значение для каждого params должно соответствовать параметрам, используемым в имени страницы:
 </p>
 
 <p className='list'>
- - Если имя страницы есть <span className="spanTag">pages/posts/[postId]/[commentId]</span>, то paramsдолжно содержать postId и commentId.
+ - Если имя страницы - <span className="spanTag">pages/posts/[postId]/[commentId]</span>, то params должно содержать postId и commentId.
 </p>
 <p className='list'>
- - Если в названии страницы используются маршруты для приема всей почты домена, например pages/[...slug], тогда <span className="spanTag">params</span> должно быть указано <span className="spanTag">slug</span>, что является массивом. Например, если это массив <span className="spanTag">['foo', 'bar']</span>, Next.js статически сгенерирует страницу по адресу <span className="spanTag">/foo/bar</span>.
+ - Если в названии страницы используются комплексные маршруты, например pages/[...slug], тогда <span className="spanTag">params</span> должно быть указано <span className="spanTag">slug</span>, что является массивом. Например, если это массив <span className="spanTag">['foo', 'bar']</span>, Next.js статически сгенерирует страницу по адресу <span className="spanTag">/foo/bar</span>.
 </p>
 <p className='list'>
- - Если страница использует дополнительный кетчуп весь маршрут, поставки <span className="spanTag">null, [], undefined</span> или <span className="spanTag">false</span> чтобы сделать корневой наиболее маршрут. Например, если вы предоставите <span className="spanTag">slug: false</span> для <span className="spanTag">pages/[[...slug]]</span>, Next.js статически сгенерирует страницу <span className="spanTag">/</span>.
+ - Если на странице используется необязательный комплексный маршрут, укажите <span className="spanTag">null, [], undefined</span> или <span className="spanTag">false</span> для отображения корневого маршрута. Например, если вы предоставите <span className="spanTag">slug: false</span> для <span className="spanTag">pages/[[...slug]]</span>, Next.js статически сгенерирует страницу <span className="spanTag">/</span>.
 </p>
 
 <h4> <span className="spanTag">fallback</span> Ключ (обязательно)</h4>
@@ -390,10 +390,10 @@ export default Blog`}
 
 <h4> <span className="spanTag">fallback: false</span></h4>
 <p>
-Если <span className="spanTag">fallback</span> есть <span className="spanTag">false</span>, то какие - либо пути не возвращаемый <span className="spanTag">getStaticPaths</span> приведет к <strong>404 странице</strong>. Вы можете сделать это, если у вас есть небольшое количество путей для предварительного рендеринга, поэтому все они статически генерируются во время сборки. Это также полезно, когда новые страницы добавляются не часто. Если вы добавляете дополнительные элементы в источник данных и вам нужно отобразить новые страницы, вам придется снова запустить сборку.
+Если <span className="spanTag">fallback</span> <span className="spanTag">false</span>, то любые пути, не возвращенные <span className="spanTag">getStaticPaths</span> приведут к странице <strong>404</strong>. Вы можете сделать это, если у вас есть небольшое количество путей для предварительного рендеринга, поэтому все они статически генерируются во время сборки. Это также полезно, когда новые страницы добавляются не часто. Если вы добавляете дополнительные элементы в источник данных и вам нужно отобразить новые страницы, вам придется снова запустить сборку.
 </p>
 <p>
-Вот пример, который предварительно отображает одно сообщение в блоге на каждую вызываемую страницу <span className="spanTag">pages/posts/[id].js</span>. Список сообщений блога будет получен с CMS и возвращен <span className="spanTag">getStaticPaths</span>. Затем для каждой страницы он извлекает данные публикации из CMS, используя <span className="spanTag">getStaticProps</span>. Этот пример также есть в документации Pages.
+Вот пример, который предварительно отображает одно сообщение в блоге на каждую вызываемую страницу <span className="spanTag">pages/posts/[id].js</span>. Список сообщений блога будет получен с CMS и возвращен <span className="spanTag">getStaticPaths</span>. Затем для каждой страницы он извлекает данные публикации из CMS, используя <span className="spanTag">getStaticProps</span>. Этот пример также есть в документации "Страницы".
 </p>
 
 <Highlight language="javascript">
@@ -445,10 +445,10 @@ export default Post`}
  - Пути, которые не были созданы во время сборки, не приведут к странице 404. Вместо этого Next.js будет обслуживать «резервную» версию страницы при первом запросе на такой путь (подробности см. В разделе «Резервные страницы» ниже).
 </p>
 <p className='list'>
- - В фоновом режиме Next.js статически сгенерирует запрошенный путь HTML и JSON. Сюда входит и бег <span className="spanTag">getStaticProps</span>.
+ - В фоновом режиме Next.js статически сгенерирует запрошенный путь HTML и JSON. Сюда входит и запуск <span className="spanTag">getStaticProps</span>.
 </p>
 <p className='list'>
- - Когда это будет сделано, браузер получит JSON для созданного пути. Это будет использоваться для автоматического рендеринга страницы с необходимыми реквизитами. С точки зрения пользователя, страница будет заменена с резервной страницы на полную.
+ - Когда это будет сделано, браузер получит JSON для созданного пути. Это будет использоваться для автоматического рендеринга страницы с необходимыми props. С точки зрения пользователя, страница будет заменена с резервной страницы на полную.
 </p>
 <p className='list'>
  - В то же время Next.js добавляет этот путь в список предварительно обработанных страниц. Последующие запросы к тому же пути будут обслуживать сгенерированную страницу, как и другие страницы, предварительно обработанные во время сборки.
@@ -459,7 +459,7 @@ export default Post`}
 <h4>Резервные страницы</h4>
 <p>В «резервной» версии страницы:</p>
 
-<p className='list'> - Реквизит страницы будет пуст.</p>
+<p className='list'> - Props страницы будет пуст.</p>
 <p className='list'> - Используя маршрутизатор, вы можете определить, <span className="spanTag">router.isFallback</span> будет ли отображаться резервная копия <span className="spanTag">true</span>.</p>
 
 Вот пример, в котором используются <span className="spanTag">isFallback</span>:
@@ -534,7 +534,7 @@ export default Post`}
 
 <h3>TypeScript: использовать <span className="spanTag">GetStaticPaths</span></h3>
 
-Для TypeScript вы можете использовать <span className="spanTag">GetStaticPaths</span> тип из <span className="spanTag">next</span>:
+Для TypeScript вы можете использовать тип <span className="spanTag">GetStaticPaths</span> из <span className="spanTag">next</span>:
 
 
 <Highlight language="javascript">
@@ -621,7 +621,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 <h3>Простой пример</h3>
 <p>
-Вот пример, который используется <span className="spanTag">getServerSideProps</span> для получения данных во время запроса и их предварительной визуализации. Этот пример также есть в документации Pages.
+Вот пример, который используется <span className="spanTag">getServerSideProps</span> для получения данных во время запроса и их предварительной визуализации. Этот пример также есть в документации 'Страницы'.
 </p>
 
 <Highlight language="javascript">
@@ -646,12 +646,12 @@ export default Page`}
 
 Вы должны использовать <span className="spanTag">getServerSideProps</span> только в том случае, если вам нужно предварительно отобразить страницу, данные которой должны быть получены во время запроса. Время до первого байта (TTFB) будет медленнее, чем <span className="spanTag">getStaticProps</span> потому, что сервер должен вычислять результат по каждому запросу, и результат не может быть кэширован CDN без дополнительной настройки.
 <p>
-Если вам не нужно предварительно отрисовывать данные, вам следует рассмотреть возможность получения данных на стороне клиента. Щелкните здесь, чтобы узнать больше.
+Если вам не нужно предварительно отрисовывать данные, вам следует рассмотреть возможность получения данных на стороне клиента.
 </p>
 
 <h3>TypeScript: использовать <span className="spanTag">GetServerSideProps</span></h3>
 
-Для TypeScript вы можете использовать <span className="spanTag">GetServerSideProps</span> тип из <span className="spanTag">next</span>:
+Для TypeScript вы можете использовать тип <span className="spanTag">GetServerSideProps</span> из <span className="spanTag">next</span>:
 
 
 <Highlight language="javascript">
@@ -664,7 +664,7 @@ export const getServerSideProps:
 </Highlight>
         
 
-Если вы хотите получить предполагаемую типизацию для своих реквизитов, вы можете использовать <span className="spanTag">InferGetServerSidePropsType{`<typeof getServerSideProps>`}</span>, например:
+Если вы хотите получить предполагаемую типизацию для своих props, вы можете использовать <span className="spanTag">InferGetServerSidePropsType{`<typeof getServerSideProps>`}</span>, например:
 
 <Highlight language="javascript">
   {`import { InferGetServerSidePropsType } from 'next'
@@ -696,17 +696,17 @@ export default Page`}
 <span className="spanTag">getServerSideProps</span> работает только на стороне сервера и никогда не запускается в браузере. Если на странице используется <span className="spanTag">getServerSideProps</span>, то:
 </p>
 <p className='list'>
- - Когда вы запрашиваете эту страницу напрямую, <span className="spanTag">getServerSideProps</span> запускается во время запроса, и эта страница будет предварительно отрисована с возвращенными реквизитами.
+ - Когда вы запрашиваете эту страницу напрямую, <span className="spanTag">getServerSideProps</span> запускается во время запроса, и эта страница будет предварительно отрисована с возвращенными props.
 </p>
 <p className='list'>
- - Когда вы запрашиваете эту страницу при переходах страниц на стороне клиента через <span className="spanTag">next/link</span>( документацию ) или <span className="spanTag">next/router</span>( документацию ), Next.js отправляет запрос API на сервер, который запускается <span className="spanTag">getServerSideProps</span>. Он вернет JSON, содержащий результат выполнения <span className="spanTag">getServerSideProps</span>, и JSON будет использоваться для визуализации страницы. Вся эта работа будет выполняться Next.js автоматически, поэтому вам не нужно делать ничего лишнего, пока вы <span className="spanTag">getServerSideProps</span> определили.
+ - Когда вы запрашиваете эту страницу при переходах по страницам на стороне клиента через <span className="spanTag">next/link</span> или <span className="spanTag">next/router</span>, Next.js отправляет запрос API на сервер, который запускает <span className="spanTag">getServerSideProps</span>. Он вернет JSON, содержащий результат выполнения <span className="spanTag">getServerSideProps</span>, и JSON будет использоваться для визуализации страницы. Вся эта работа будет выполняться Next.js автоматически, поэтому вам не нужно ничего делать, если у вас определен <span className="spanTag">getServerSideProps</span>.
 </p>
 Вы можете использовать этот инструмент, чтобы проверить, что Next.js исключает из клиентского пакета.
 
 
 <h4>Разрешено только на странице</h4>
 <p>
-<span className="spanTag">getServerSideProps</span> можно экспортировать только со страницы. Вы не можете экспортировать его из файлов, не являющихся страницами.
+<span className="spanTag">getServerSideProps</span> можно экспортировать только со страницы. Вы не можете экспортировать его из файлов, не являющимися страницами.
 </p>
 
 <p>

@@ -8,7 +8,7 @@ export default () => {
             <div className="container">
                 <h1>Динамические маршруты</h1>
              
-Определение маршрутов с использованием заранее определенных путей не всегда достаточно для сложных приложений. В Next.js вы можете добавить скобки к странице (<span className="spanTag">[param]</span>) для создания динамического маршрута (он же ярлыки URL-адресов, красивые URL-адреса и другие).
+Определение маршрутов с использованием заранее определенных путей не всегда достаточно для сложных приложений. В Next.js вы можете добавить скобки к странице (<span className="spanTag">[param]</span>) для создания динамического маршрута.
 
 <p>
 Рассмотрим следующую страницу <span className="spanTag">pages/post/[pid].js</span>:
@@ -59,7 +59,7 @@ export default Post`}
 
 Динамические маршруты можно расширить, чтобы охватить все пути, добавив три точки (<span className="spanTag">...</span>) в скобки. Например:
 <p className='list'>
- - <span className="spanTag">pages/post/[...slug].js</span> спички <span className="spanTag">/post/a</span>, но также <span className="spanTag">/post/a/b</span>, <span className="spanTag">/post/a/b/c</span> и так далее.  
+ - <span className="spanTag">pages/post/[...slug].js</span> соответствует <span className="spanTag">/post/a</span>, а также <span className="spanTag">/post/a/b</span>, <span className="spanTag">/post/a/b/c</span> и так далее.  
 </p>
 
 <div className="note">Примечание. Вы можете использовать другие имена <span className="spanTag">slug</span>, например: <span className="spanTag">[...param]</span></div>
@@ -74,9 +74,9 @@ export default Post`}
     {`{ "slug": ["a", "b"] }`}
 </Highlight>
 
-<h3>Необязательно поймать все маршруты</h3>
+<h3>Необязательно ловить все маршруты</h3>
 
-Поймать все маршруты можно сделать необязательными, включив параметр в двойные скобки (<span className="spanTag">[[...slug]]</span>).
+Отлов всех маршрутов можно сделать необязательным, включив параметр в двойные скобки (<span className="spanTag">[[...slug]]</span>).
 <p>
 Например, <span className="spanTag">pages/post/[[...slug]].js</span> будет соответствовать <span className="spanTag">/post</span>, <span className="spanTag">/post/a</span>, <span className="spanTag">/post/a/b</span> и так далее.
 </p>
@@ -92,7 +92,7 @@ export default Post`}
 { "slug": ["a", "b"] } // 'GET /post/a/' (multi-element array)`}
 </Highlight>
 
-Хорошим примером необязательного перехвата всех маршрутов являются документы Next.js, единственная страница с именем <span className="spanTag">pages/docs/[[... slug]].js</span> заботится обо всех документах, которые вы просматриваете в данный момент.
+Хорошим примером необязательного перехвата всех маршрутов являются документация Next.js, единственная страница с именем <span className="spanTag">pages/docs/[[... slug]].js</span> заботится обо всех документах, которые вы просматриваете в данный момент.
 
 <h2>Предостережения</h2>
 
@@ -106,7 +106,7 @@ export default Post`}
 </p>
 
 
- - При маршрутизации к динамическому маршруту с использованием <span className="spanTag">Link</span> или router вам нужно будет указать в <span className="spanTag">href</span> качестве динамического маршрута, например, <span className="spanTag">/post/[pid]</span> и as в качестве декоратора для URL-адреса, например <span className="spanTag">/post/abc</span>.
+ - При маршрутизации к динамическому маршруту с использованием <span className="spanTag">Link</span> или router вам нужно будет указать в качестве <span className="spanTag">href</span> динамического маршрута, например, <span className="spanTag">/post/[pid]</span> и as в качестве декоратора для URL-адреса, например <span className="spanTag">/post/abc</span>.
 <p>
 После гидратации Next.js запустит обновление вашего приложения, чтобы предоставить параметры маршрута в <span className="spanTag">query</span> объекте.
 </p>

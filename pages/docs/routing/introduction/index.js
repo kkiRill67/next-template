@@ -88,10 +88,10 @@ export default Home`}
 </Highlight>
 
 <p>
-При связывании с маршрутом с сегментами динамического пути вы должны предоставить <span className="spanTag">href</span> и <span className="spanTag">as</span> убедиться, что маршрутизатор знает, какой файл JavaScript загружать.
+При связывании с маршрутом с сегментами динамического пути вы должны предоставить <span className="spanTag">href</span> и <span className="spanTag">as</span>, убедиться что маршрутизатор знает, какой файл JavaScript загружать.
 </p>
 <p className='list'>
- - <span className="spanTag">href</span> - Название страницы в pagesкаталоге. Например <span className="spanTag">/blog/[slug]</span>.
+ - <span className="spanTag">href</span> - Название страницы в pages каталоге. Например <span className="spanTag">/blog/[slug]</span>.
 </p>
 <p className='list'>
  - <span className="spanTag">as</span> - URL-адрес, который будет отображаться в браузере. Например <span className="spanTag">/blog/hello-world</span>.
@@ -117,7 +117,7 @@ function Home() {
 export default Home`}
 </Highlight>
 
-<span className="spanTag">as</span> Опора может также быть сгенерированы динамически. Например, чтобы показать список сообщений, которые были переданы на страницу в качестве опоры:
+<span className="spanTag">as</span> может также быть сгенерирован динамически. Например, чтобы показать список сообщений, которые были переданы на страницу:
 
 <Highlight language="javascript">
     {`function Home({ posts }) {
@@ -137,7 +137,7 @@ export default Home`}
 
 <h2>Внедрение роутера</h2>
 
-Для доступа к <span className="spanTag">router</span> объекту в компоненте React вы можете использовать <span className="spanTag">useRouter</span> или <span className="spanTag">withRouter</span>.
+Для доступа к объекту <span className="spanTag">router</span> в компоненте React вы можете использовать <span className="spanTag">useRouter</span> или <span className="spanTag">withRouter</span>.
 <p>В общем, мы рекомендуем использовать <span className="spanTag">useRouter</span>.</p>
 
             </div>

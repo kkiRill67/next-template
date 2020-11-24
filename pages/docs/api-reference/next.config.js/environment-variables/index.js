@@ -21,7 +21,7 @@ export default () => {
 }`}
 </Highlight>
 
-Теперь вы можете получить доступ process.env.customKey к своему коду. Например:
+Теперь вы можете получить доступ <span className="spanTag">process.env.customKey</span> к своему коду. Например:
 
 <Highlight language="javascript">
 {`function Page() {
@@ -31,7 +31,7 @@ export default () => {
 export default Page`}
 </Highlight>
 
-Next.js заменит process.env.customKey с 'my-value' во время сборки. Попытка деструктурировать process.env переменные не сработает из-за природы Webpack DefinePlugin.
+Next.js заменит <span className="spanTag">process.env.customKey</span> с 'my-value' во время сборки. Попытка деструктурировать <span className="spanTag">process.env</span> переменные не сработает из-за природы Webpack DefinePlugin.
 
 <p>Например, следующая строка:</p>
 

@@ -42,12 +42,12 @@ webpack Функция выполняется дважды, один раз дл
 </div>
 
 Второй аргумент webpack функции - это объект со следующими свойствами:
-<p className="list"> - buildId: String - Идентификатор сборки, используемый как уникальный идентификатор между сборками</p>
-<p className="list"> - dev: Boolean - Указывает, будет ли компиляция выполняться в разработке</p>
-<p className="list"> - isServer: Boolean - Это trueдля компиляции на стороне сервера и false для компиляции на стороне клиента</p>
+<p className="list"> - <strong>buildId: String</strong> - Идентификатор сборки, используемый как уникальный идентификатор между сборками</p>
+<p className="list"> - <strong>dev: Boolean</strong> - Указывает, будет ли компиляция выполняться в разработке</p>
+<p className="list"> - <strong>isServer: Boolean</strong> - Это true для компиляции на стороне сервера и false для компиляции на стороне клиента</p>
 <p className="list">
- - defaultLoaders: Object - Загрузчики по умолчанию, используемые внутри Next.js:
-    <p className="list"> - babel: Object- babel-loader Конфигурация по умолчанию</p>    
+ - <strong>defaultLoaders: Object</strong> - Загрузчики по умолчанию, используемые внутри Next.js:
+    <p className="list"> - <strong>babel: Object</strong> - babel-loader Конфигурация по умолчанию</p>    
 </p>
 
 Пример использования defaultLoaders.babel:

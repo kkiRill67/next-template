@@ -16,12 +16,12 @@ export default () => {
     <p>Эти новые методы выборки данных позволяют выбирать между статической генерацией и рендерингом на стороне сервера. Узнайте больше о документации по страницам и извлечению данных.</p>
 </div>   
 
-getInitialProps включает рендеринг на стороне сервера и позволяет выполнять начальное заполнение данных , что означает отправку страницы с данными, уже заполненными с сервера. Это особенно полезно для SEO .
+<span className="spanTag">getInitialProps</span> включает рендеринг на стороне сервера и позволяет выполнять начальное заполнение данных, что означает отправку страницы с данными, уже заполненными с сервера. Это особенно полезно для SEO.
 <p></p>
-<div className="note">getInitialProps отключит автоматическую статическую оптимизацию.</div>
+<div className="note"><span className="spanTag">getInitialProps</span> отключит автоматическую статическую оптимизацию.</div>
 
 
-getInitialProps - это async функция, которую можно добавить на любую страницу в виде файла static method. Взгляните на следующий пример:
+<span className="spanTag">getInitialProps</span> - это async функция, которую можно добавить на любую страницу в виде файла <span className="spanTag">static method</span>. Взгляните на следующий пример:
 
 <Highlight language="javascript">
 {`function Page({ stars }) {
@@ -57,24 +57,24 @@ class Page extends React.Component {
 export default Page`}
 </Highlight>
 
-getInitialProps используется для асинхронной выборки некоторых данных, которые затем заполняются props.
-<p>Данные, возвращаемые из getInitialProps, сериализуются при рендеринге сервера, аналогично тому, как это JSON.stringify происходит. Убедитесь, что возвращенный объект getInitialProps является простым Object и не использует Date, Map или Set.</p>
-При начальной загрузке страницы getInitialProps будет выполняться только на сервере. getInitialProps затем будет запускаться на клиенте при переходе к другому маршруту через next/link компонент или с помощью next/router.
+<span className="spanTag">getInitialProps</span> используется для асинхронной выборки некоторых данных, которые затем заполняются props.
+<p>Данные, возвращаемые из <span className="spanTag">getInitialProps</span>, сериализуются при рендеринге сервера, аналогично тому, как это JSON.stringify происходит. Убедитесь, что возвращенный объект <span className="spanTag">getInitialProps</span> является простым Object и не использует Date, Map или Set.</p>
+При начальной загрузке страницы <span className="spanTag">getInitialProps</span> будет выполняться только на сервере. <span className="spanTag">getInitialProps</span> затем будет запускаться на клиенте при переходе к другому маршруту через <span className="spanTag">next/link</span> компонент или с помощью <span className="spanTag">next/router</span>.
 
 <h2>Объект контекста</h2>
 
-getInitialProps получает единственный вызываемый аргумент context, это объект со следующими свойствами:
-<p className="list"> - pathname - Текущий маршрут. Это путь к странице /pages</p>
-<p className="list"> - query - Раздел строки запроса URL-адреса, анализируемого как объект</p>
-<p className="list"> - asPath - String фактического пути (включая запрос), отображаемого в браузере</p>
-<p className="list"> - req - объект HTTP-запроса (только сервер)</p>
-<p className="list"> - res - объект HTTP-ответа (только сервер)</p>
-<p className="list"> - err - Объект ошибки, если во время рендеринга обнаружена какая-либо ошибка</p>
+<span className="spanTag">getInitialProps</span> получает единственный вызываемый аргумент <span className="spanTag">context</span>, это объект со следующими свойствами:
+<p className="list"> - <strong>pathname</strong> - Текущий маршрут. Это путь к странице /pages</p>
+<p className="list"> - <strong>query</strong> - Раздел строки запроса URL-адреса, анализируемого как объект</p>
+<p className="list"> - <strong>asPath</strong> - String фактического пути (включая запрос), отображаемого в браузере</p>
+<p className="list"> - <strong>req</strong> - объект HTTP-запроса (только сервер)</p>
+<p className="list"> - <strong>res</strong> - объект HTTP-ответа (только сервер)</p>
+<p className="list"> - <strong>err</strong> - Объект ошибки, если во время рендеринга обнаружена какая-либо ошибка</p>
 
 <h2>Предостережения</h2>
 
-<p className="list"> - getInitialProps может не использоваться в детских компонентов, только в экспорте по умолчанию каждой страницы</p>
-<p className="list"> - Если вы используете внутри только серверные модули getInitialProps, убедитесь, что импортировали их правильно , иначе это замедлит работу вашего приложения.</p>
+<p className="list"> - <span className="spanTag">getInitialProps</span> может не использоваться в детских компонентов, только в экспорте по умолчанию каждой страницы</p>
+<p className="list"> - Если вы используете внутри только серверные модули <span className="spanTag">getInitialProps</span>, убедитесь, что импортировали их правильно, иначе это замедлит работу вашего приложения.</p>
 
 <h2>TypeScript</h2>
 Если вы используете TypeScript, вы можете использовать этот NextPage тип для функциональных компонентов:

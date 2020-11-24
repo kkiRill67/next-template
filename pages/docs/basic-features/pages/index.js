@@ -7,10 +7,10 @@ export default () => {
             <div className="container">
             <h1>Страницы</h1>
 <div className='note'>Этот документ предназначен для Next.js версий 9.3 и выше. Если вы используете более старые версии Next.js, обратитесь к предыдущей документации.</div>
-<p>В Next.js, страница является Реагировать компонент экспортирован из <span className="spanTag">.js</span>, <span className="spanTag">.jsx</span>, <span className="spanTag">.ts</span> или <span className="spanTag">.tsx</span> файла в <span className="spanTag">pages</span> каталоге. Каждая страница связана с маршрутом на основе имени файла.</p>
+<p>В Next.js, страница является компонентом экспортированным из <span className="spanTag">.js</span>, <span className="spanTag">.jsx</span>, <span className="spanTag">.ts</span> или <span className="spanTag">.tsx</span> файла в <span className="spanTag">pages</span> каталоге. Каждая страница связана с маршрутом на основе имени файла.</p>
 
 
-<strong>Пример:</strong> если вы создадите, <span className="spanTag">pages/about.js</span> который экспортирует компонент React, как показано ниже, он будет доступен по адресу <span className="spanTag">/about</span>.
+<strong>Пример:</strong> если вы создадите <span className="spanTag">pages/about.js</span>, который экспортирует компонент React, как показано ниже, он будет доступен по адресу <span className="spanTag">/about</span>.
 
 <Highlight language="javascript">{`function About() {
     return <div>About</div>
@@ -94,7 +94,7 @@ function Blog({ posts }) {
 </Highlight>
 
 
-Чтобы извлечь эти данные надо предварительно вынести, Next.js позволяет <span className="spanTag">export</span> в <span className="spanTag">async</span> функции, вызываемой <span className="spanTag">getStaticProps</span> из того же файла. Эта функция вызывается во время сборки и позволяет передавать полученные данные на страницу <span className="spanTag">props</span> при предварительном рендеринге.
+Чтобы извлечь эти данные их надо предварительно вынести, Next.js позволяет <span className="spanTag">export</span> в <span className="spanTag">async</span> функции, вызываемой <span className="spanTag">getStaticProps</span> из того же файла. Эта функция вызывается во время сборки и позволяет передавать полученные данные на страницу <span className="spanTag">props</span> при предварительном рендеринге.
 
 
 <Highlight language="javascript">
@@ -122,7 +122,7 @@ function Blog({ posts }) {
 </Highlight>
 
 
-<p>Чтобы узнать больше о том <span className="spanTag">getStaticProps</span>, как работает, ознакомьтесь с документацией по извлечению данных.</p>
+<p>Чтобы узнать больше о том, как работает <span className="spanTag">getStaticProps</span>, ознакомьтесь с документацией по извлечению данных.</p>
 <h4>Сценарий 2. Пути к страницам зависят от внешних данных</h4>
 <p>Next.js позволяет создавать страницы с динамическими маршрутами. Например, вы можете создать файл с именем <span className="spanTag">pages/posts/[id].js</span> для отображения отдельного сообщения в блоге на основе <span className="spanTag">id</span>. Это позволит вам показывать сообщение в блоге, <span className="spanTag">id: 1</span> когда вы входите в него <span className="spanTag">posts/1</span>.</p>
 
@@ -176,7 +176,6 @@ function Blog({ posts }) {
 </Highlight>
 
 
-<p>Чтобы узнать больше о том <span className="spanTag">getStaticPaths</span>, как работает, ознакомьтесь с документацией по извлечению данных.</p>
 
 <h2>Когда мне следует использовать статическую генерацию?</h2>
 <p>Мы рекомендуем использовать статическую генерацию (с данными и без них), когда это возможно, потому что ваша страница может быть создана один раз и обслужена CDN, что делает ее намного быстрее, чем сервер, отображающий страницу при каждом запросе.</p>
@@ -187,7 +186,7 @@ function Blog({ posts }) {
 <p className='list'>- Списки товаров для электронной коммерции</p>
 <p className='list'>- Помощь и документация</p>
 
-<p>Вы должны спросить себя: «Могу ли я предварительно обработать эту страницу до запроса пользователя?» Если да, то вам следует выбрать «Статическая генерация».</p>
+<p>Вы должны спросить себя: «Могу ли я предварительно обработать эту страницу до запроса пользователя?» Если да, то вам следует выбрать «Статическую генерацию».</p>
 <p>С другой стороны, статическая генерация не является хорошей идеей, если вы не можете предварительно отрисовать страницу до запроса пользователя. Возможно, ваша страница показывает часто обновляемые данные, и содержание страницы меняется при каждом запросе.</p>
 <p>В подобных случаях вы можете сделать одно из следующего:</p>
 
@@ -200,8 +199,8 @@ function Blog({ posts }) {
 
 <div className='note'>Также называется «SSR» или «Динамический рендеринг».</div>
 <p>Если страница использует рендеринг на стороне сервера, HTML страницы создается при каждом запросе.</p>
-<p>Для использования на стороне сервера Rendering для страницы, необходимо <span className="spanTag">export</span> в <span className="spanTag">async</span> функции , вызываемой <span className="spanTag">getServerSideProps</span>. Эта функция будет вызываться сервером при каждом запросе.</p>
-<p>Например, предположим, что ваша страница должна предварительно отображать часто обновляемые данные (полученные из внешнего API). Вы можете написать, <span className="spanTag">getServerSideProps</span> который извлекает эти данные и передает их, <span className="spanTag">Page</span> как показано ниже:</p>
+<p>Для использования на стороне сервера рендеринг для страницы, необходимо <span className="spanTag">export</span> в <span className="spanTag">async</span> функции , вызываемой <span className="spanTag">getServerSideProps</span>. Эта функция будет вызываться сервером при каждом запросе.</p>
+<p>Например, предположим, что ваша страница должна предварительно отображать часто обновляемые данные (полученные из внешнего API). Вы можете написать, <span className="spanTag">getServerSideProps</span> который извлекает эти данные и передает их в <span className="spanTag">Page</span>, как показано ниже:</p>
 
 
 <Highlight language="javascript">

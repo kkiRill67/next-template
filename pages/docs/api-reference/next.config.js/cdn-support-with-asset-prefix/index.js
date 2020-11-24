@@ -15,7 +15,7 @@ export default () => {
 </div>
 
 Чтобы настроить CDN , вы можете настроить префикс актива и настроить источник CDN для разрешения домена, на котором размещен Next.js.
-<p>Открываем next.config.js и добавляем assetPrefix конфиг:</p>
+<p>Открываем next.config.js и добавляем <span className="spanTag">assetPrefix</span> конфиг:</p>
 
 <Highlight language="javascript">
 {`const isProd = process.env.NODE_ENV === 'production'
@@ -26,11 +26,11 @@ module.exports = {
 }`}
 </Highlight>
 
-Next.js будет автоматически использовать префикс вашего ресурса для файлов JavaScript и CSS, которые он загружает из пути /_next/ ( .next/static/папки ).
+Next.js будет автоматически использовать префикс вашего ресурса для файлов JavaScript и CSS, которые он загружает из пути <span className="spanTag">/_next/</span> ( .next/static/папки ).
 <p>Поддержка префикса актива не влияет на следующие пути:</p>
 <p className="list"> - Файлы в общей папке; если вы хотите обслуживать эти ресурсы через CDN, вам придется ввести префикс самостоятельно</p>
-<p className="list"> - /_next/data/ запросы на getServerSideProps страницы. Эти запросы всегда будут направляться к основному домену, поскольку они не статичны.</p>
-<p className="list"> - /_next/data/ запросы на getStaticProps страницы. Эти запросы всегда будут направляться к основному домену для поддержки инкрементной статической генерации, даже если вы ее не используете (для согласованности).</p>
+<p className="list"> - /_next/data/ запросы на <span className="spanTag">getServerSideProps</span> страницы. Эти запросы всегда будут направляться к основному домену, поскольку они не статичны.</p>
+<p className="list"> - /_next/data/ запросы на <span className="spanTag">getStaticProps</span> страницы. Эти запросы всегда будут направляться к основному домену для поддержки инкрементной статической генерации, даже если вы ее не используете (для согласованности).</p>
             </div>
         </Docs>
     )

@@ -6,7 +6,7 @@ export default function Menu() {
         <header className={styles.head}>
             <div  className={styles.wrap}>
             <div className={styles.stick} >
-                <img src="../../next.png" className={styles.logo} />
+                <img src="/next.png" className={styles.logo} />
                 <span>RU</span>
             </div>
             <nav>

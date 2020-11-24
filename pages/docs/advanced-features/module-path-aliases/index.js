@@ -8,10 +8,10 @@ export default function Index(props) {
             <div className="container">
                 <h1>Абсолютный импорт и псевдонимы пути к модулю</h1>
             
-Next.js автоматически поддерживает параметры tsconfig.jsonи jsconfig.json "paths"и "baseUrl", начиная с Next.js 9.4 .
+Next.js автоматически поддерживает параметры <span className="spanTag">tsconfig.json</span> и <span className="spanTag">jsconfig.json</span> "paths" и "baseUrl", начиная с Next.js 9.4.
 <p></p>
 <div className="note">
- Примечание: jsconfig.jsonможно использовать, когда вы не используете TypeScript   
+ Примечание: <span className="spanTag">jsconfig.json</span> можно использовать, когда вы не используете TypeScript   
 </div>
 
 
@@ -20,7 +20,7 @@ Next.js автоматически поддерживает параметры t
 Одна из полезных функций этих опций заключается в том, что они автоматически интегрируются в определенные редакторы, например, vscode.
 </p>
 
-Опция baseUrlконфигурации позволяет вам импортировать прямо из корня проекта.
+Опция <span className="spanTag">baseUrl</span> конфигурации позволяет вам импортировать прямо из корня проекта.
 
 <p>Пример такой конфигурации:</p>
 
@@ -55,10 +55,10 @@ export default function HomePage() {
 }`}
 </Highlight>
 
-Хотя baseUrl это полезно, вы можете захотеть добавить другие псевдонимы, которые не соответствуют 1 на 1. Для этого TypeScript есть "paths"опция.
+Хотя <span className="spanTag">baseUrl</span> это полезно, вы можете захотеть добавить другие псевдонимы, которые не соответствуют 1 на 1. Для этого TypeScript есть "paths" опция.
 
 <p>
-Использование "paths" позволяет настраивать псевдонимы модулей. Например, @/components/*чтобы components/*.
+Использование "paths" позволяет настраивать псевдонимы модулей. Например, <span className="spanTag">@/components/*</span> чтобы <span className="spanTag">components/*</span>.
 </p>
 
 Пример такой конфигурации:

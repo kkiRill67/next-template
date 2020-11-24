@@ -55,7 +55,7 @@ export default function MyApp({ Component, pageProps }) {
 Next.js поддерживает модули CSS, используя <span className="spanTag">[name].module.css</span> соглашение об именах файлов.
 </p>
 <p>
-Модули CSS локально охватывают CSS, автоматически создавая уникальное имя класса. Это позволяет использовать одно и то же имя класса CSS в разных файлах, не беспокоясь о коллизиях.
+Модули CSS локально охватывают CSS, автоматически создавая уникальное имя класса. Это позволяет использовать одно и то же имя класса CSS в разных файлах, не беспокоясь об противоречиях.
 </p>
 <p>
 Такое поведение делает модули CSS идеальным способом включения CSS на уровне компонентов. Файлы модуля CSS можно импортировать в любое место вашего приложения.
@@ -99,15 +99,15 @@ export function Button() {
         
 
 <p>
-Модули CSS являются дополнительной функцией и доступны только для файлов с <span className="spanTag">.module.css</span> расширением. <span className="spanTag">{`<link>`}</span> По-прежнему поддерживаются обычные таблицы стилей и глобальные файлы CSS.
+Модули CSS являются дополнительной функцией и доступны только для файлов с расширением <span className="spanTag">.module.css</span>. Стандартные таблицы стилей <span className="spanTag">{`<link>`}</span> и глобальные файлы CSS по-прежнему поддерживаются.
 </p>
 <p>
-При производстве все файлы модуля CSS будут автоматически объединены во множество минифицированных файлов и <span className="spanTag">.css</span> файлов с разделением кода. Эти <span className="spanTag">.css</span> файлы представляют собой горячие пути выполнения в вашем приложении, обеспечивая загрузку минимального количества CSS для вашего приложения для рисования.
+При производстве все файлы модуля CSS будут автоматически объединены во множество минифицированных файлов и <span className="spanTag">.css</span> файлов с разделением кода. Эти <span className="spanTag">.css</span> файлы представляют собой горячие пути выполнения в вашем приложении, обеспечивая загрузку минимального количества CSS для отрисовки вашего приложения.
 </p>
 
 <h2>Поддержка Sass</h2>
 <p>
-Next.js позволяет импортировать Sass с использованием как <span className="spanTag">.scss</span> и <span className="spanTag">.sass</span> расширений. Вы можете использовать Sass на уровне компонентов через модули CSS и расширение <span className="spanTag">.module.scss</span> или <span className="spanTag">.module.sass</span>.
+Next.js позволяет импортировать Sass с использованием <span className="spanTag">.scss</span> и <span className="spanTag">.sass</span> расширений. Вы можете использовать Sass на уровне компонентов через модули CSS и расширение <span className="spanTag">.module.scss</span> или <span className="spanTag">.module.sass</span>.
 </p>
 <p>
 Прежде чем вы сможете использовать встроенную поддержку Sass в Next.js, обязательно установите <span className="spanTag">sass</span>:
@@ -146,12 +146,12 @@ module.exports = {
 }`}
 </Highlight>
         
-<h2>Меньше и поддержка стилуса</h2>
+<h2>Less и Stylus поддержка</h2>
 <p>
-Для поддержки импорта <span className="spanTag">.less</span> или <span className="spanTag">.styl</span> файлов, которые вы можете использовать следующие плагин:
+Для поддержки импорта <span className="spanTag">.less</span> или <span className="spanTag">.styl</span> файлов, вы можете использовать следующие плагины:
 </p>
-<p className='list'> - @ zeit / next-less</p>
-<p className='list'> - @ zeit / следующий-стилус</p>
+<p className='list'> - @zeit/next-less</p>
+<p className='list'> - @zeit/next-stylus</p>
 
 
 
@@ -213,16 +213,11 @@ export default HiThere`}
 
 export default HelloWorld`}
 </Highlight>
-       
-
-<p>
-Пожалуйста, обратитесь к документации в стиле-JSX для большего количества примеров.
-</p>
 
 <h2>Вопросы-Ответы</h2>
 
 Работает ли он с отключенным JavaScript?
-Да, если вы отключите JavaScript, CSS все равно будет загружен в производственную сборку (<span className="spanTag">next start</span>). Во время разработки мы требуем, чтобы JavaScript был включен, чтобы обеспечить максимальное удобство для разработчиков с помощью Быстрого обновления.
+Да, если вы отключите JavaScript, CSS все равно будет загружен в производственную сборку (<span className="spanTag">next start</span>). Во время разработки мы требуем, чтобы JavaScript был включен, чтобы обеспечить максимальное удобство для разработчиков с помощью быстрого обновления.
             </div>
         </Docs>
     )

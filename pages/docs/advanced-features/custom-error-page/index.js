@@ -16,7 +16,7 @@ export default function Index(props) {
 
 <h3>Настройка страницы 404</h3>
 
-Чтобы создать собственную страницу 404, вы можете создать pages/404.js файл. Этот файл статически создается во время сборки.
+Чтобы создать собственную страницу 404, вы можете создать <span className="spanTag">pages/404.js</span> файл. Этот файл статически создается во время сборки.
 
 <Highlight language="javascript">
 {`// pages/404.js
@@ -30,7 +30,7 @@ export default function Custom404() {
 
 <h3>Настройка страницы ошибок</h3>
 
-Error Компонент обрабатывает 500 ошибок как на стороне клиента, так и на стороне сервера. Если вы хотите переопределить его, определите файл pages/_error.js и добавьте следующий код:
+<span className="spanTag">Error</span> Компонент обрабатывает 500 ошибок как на стороне клиента, так и на стороне сервера. Если вы хотите переопределить его, определите файл <span className="spanTag">pages/_error.js</span> и добавьте следующий код:
 
 <Highlight language="javascript">
 {`function Error({ statusCode }) {
@@ -52,12 +52,12 @@ export default Error`}
 </Highlight>
 
 <div className="note">
-pages/_error.js используется только в производстве. В процессе разработки вы получите ошибку в стеке вызовов, чтобы узнать, откуда возникла ошибка.
+<span className="spanTag">pages/_error.js</span> используется только в производстве. В процессе разработки вы получите ошибку в стеке вызовов, чтобы узнать, откуда возникла ошибка.
 </div>
 
 <h3>Повторное использование встроенной страницы ошибок</h3>
 
-Если вы хотите отобразить встроенную страницу ошибки, вы можете импортировать Error компонент:
+Если вы хотите отобразить встроенную страницу ошибки, вы можете импортировать <span className="spanTag">Error</span> компонент:
 
 <Highlight language="javascript">
 {`import Error from 'next/error'
@@ -82,10 +82,10 @@ export default function Page({ errorCode, stars }) {
 </Highlight>
 
 <p>
-Error Компонент также имеет title как свойство, если вы хотите передать в текстовом сообщении вместе с statusCode.
+<span className="spanTag">Error</span> Компонент также имеет <span className="spanTag">title</span> как свойство, если вы хотите передать в текстовом сообщении вместе с <span className="spanTag">statusCode</span>.
 </p>
 
-Если у вас есть настраиваемый Error компонент, обязательно импортируйте его. next/error экспортирует компонент по умолчанию, используемый Next.js.
+Если у вас есть настраиваемый <span className="spanTag">Error</span> компонент, обязательно импортируйте его. <span className="spanTag">next/error</span> экспортирует компонент по умолчанию, используемый Next.js.
             </div>
         </Docs>
     )
