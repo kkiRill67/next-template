@@ -22,8 +22,6 @@ function List({ lists }) {
     
   return (
       <div className={link.link}>
-        {console.log(router.route)}
-        {console.log(lists)}
         {
             lists.show === false ? <Link href={lists.id}><a className={router.route === lists.id ? styles.activeLink : ''}>{lists.name}</a></Link> :
         <div><Link key={lists.id} href=''><a onClick={handleShow}>{show === false ? <span>&rsaquo;</span> : <span>&darr;</span>} {lists.name}</a></Link>

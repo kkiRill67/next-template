@@ -8,6 +8,10 @@ img.logo{
   margin-right: 40px;
   display: flex;
   align-items: center;
+  margin-left: 17%;
+  @media screen and (max-width: 700px){
+    margin-left: 10px;
+  }
 
   .big{
     border: none;
@@ -28,20 +32,33 @@ img.logo{
   .wrap{
     z-index: 99;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    width: 800px;
-    margin: 0 auto;
     position: fixed;
-    border-bottom: 1px solid lightgray;
     padding: 10px;
+    margin: 0 auto;
+    // padding-left: 15rem;
+    border-bottom: 1px solid lightgray;
     width: 100vw;
     background: rgb(255, 255, 255);
+    .showMenu {
+      div{
+        border: 1px solid black;
+        width: 30px;
+        margin: 7px;
+      }
 
+      @media screen and (max-width: 700px){
+        display: block;
+      }
+    }
+    @media screen and (max-width: 700px){
+      padding-left: 10px;
+    }
 
 
     a{
-      margin: 0 40px;
+      // margin: 0 40px;
       color: gray;
     }
 
