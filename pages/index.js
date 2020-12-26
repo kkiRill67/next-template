@@ -33,14 +33,16 @@ export default function Home() {
           <a
             href="https://github.com/vercel/next.js/tree/master/examples"
             className={styles.card}
+            target="_blank" 
           >
             <h3>Примеры &rarr;</h3>
-            <p>Примеры сайтов который разработаны с помощью Next.js.</p>
+            <p>Примеры работы Next.js.</p>
           </a>
 
           <a
             href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className={styles.card}
+            target="_blank" 
           >
             <h3>Разное &rarr;</h3>
             <p>
@@ -52,11 +54,11 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <a
-          href="https://jscripts.ru"
+          href="https://github.com/kkiRill67"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Переведено сайтом JScripts.ru
+          Перевел и разработал Kirill Krotenkov
         </a>
       </footer>
     </div>
