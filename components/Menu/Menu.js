@@ -11,9 +11,6 @@ export default function Menu() {
             </div>
             <nav>
                 <Link href='/'><a className={styles.card}>Главная</a></Link>
-                <Link href='/'><a>Документация</a></Link>
-                <Link href='/'><a>Next.js</a></Link>
-                <Link href='/'><a>JScripts</a></Link>
             </nav>
             </div>
             
