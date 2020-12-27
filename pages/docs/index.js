@@ -62,13 +62,13 @@ export default function Index(props) {
 <p><span className="spanTag">start</span>- Запускает next start, производственный сервер Next.js</p>
 
 
-Next.js построен на концепции страниц . Страница представляет собой компонент экспортированный из <span className='spanTag'>.js</span>, <span className='spanTag'>.jsx</span>, <span className='spanTag'>.ts</span> или <span className='spanTag'>.tsx</span> файла в <span className='spanTag'>pages</span> каталоге.
+Next.js построен на концепции страниц. Страница представляет собой React Component экспортированный из <span className='spanTag'>.js</span>, <span className='spanTag'>.jsx</span>, <span className='spanTag'>.ts</span> или <span className='spanTag'>.tsx</span> файла в <span className='spanTag'>pages</span> каталоге.
 
 <p>Страницы связаны с маршрутом на основе имени файла. Например <span className="spanTag">pages/about.js</span>, отображается на <span className="spanTag">/about</span>. Вы даже можете добавить параметры динамического маршрута с именем файла.</p>
 
 Создайте pages каталог внутри вашего проекта.
 
-Заполните <span className="spanTag">./pages/index.js</span> следующим содержанием:
+<p>Заполните <span className="spanTag">./pages/index.js</span> следующим содержанием:</p>
 
 <Highlight language="javascript">
 {`function HomePage() {
