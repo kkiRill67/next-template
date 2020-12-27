@@ -88,14 +88,17 @@ API-маршруты
 Ниже приводится пример того, как использовать встроенные типы для маршрутов API:
 
 <Highlight language="javascript">
-    {`import { NextApiRequest, NextApiResponse } from 'next'
+{`import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
   res.status(200).json({ name: 'John Doe' })
-}
+}`}
+</Highlight>
+
 Вы также можете ввести данные ответа:
 
-import { NextApiRequest, NextApiResponse } from 'next'
+<Highlight language="javascript">
+    {`import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
   name: string
@@ -107,10 +110,10 @@ export default (req: NextApiRequest, res: NextApiResponse<Data>) => {
 </Highlight>
 
 <h2>
-Custom App
+Custom  <span className="spanTag">App</span>
 </h2>
 
-Если у вас есть custom App, вы можете использовать встроенный тип <span className="spanTag">AppProps</span> и изменить имя файла <span className="spanTag">./pages/_app.tsx</span> так:
+Если у вас есть custom  <span className="spanTag">App</span>, вы можете использовать встроенный тип <span className="spanTag">AppProps</span> и изменить имя файла <span className="spanTag">./pages/_app.tsx</span> так:
 
 
 <Highlight language="javascript">
