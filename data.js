@@ -22,12 +22,16 @@ export const lists = [
             name: `Встроенная поддержка CSS`
           },
           {
-            id: '/docs/basic-features/fast-refresh',
-            name: `Быстрое обновление`
+            id: '/docs/basic-features/image-optimization',
+            name: `Оптимизация изображений`
           },
           {
             id: '/docs/basic-features/static-file-serving',
             name: `Обслуживание статических файлов`
+          },
+          {
+            id: '/docs/basic-features/fast-refresh',
+            name: `Быстрое обновление`
           },
           {
             id: '/docs/basic-features/typescript',
