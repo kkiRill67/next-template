@@ -48,7 +48,45 @@ export default function MyApp({ Component, pageProps }) {
 
 <h3>Импортировать стили из <span className="spanTag">node_modules</span></h3>
 
-Если вы хотите импортировать файлы CSS из <span className="spanTag">node_modules</span>, вы должны сделать это внутри <span className="spanTag">pages/_app.js</span>.
+<p>Начиная с Next.js <strong>9.5.4</strong>, импорт файла CSS из <span className="spanTag">node_modules</span> разрешен в любом месте вашего приложения.</p>
+Для глобальных таблиц стилей, таких как <span className="spanTag">bootstrap</span> или <span className="spanTag">nprogress</span>, вы должны импортировать файл внутри <span className="spanTag">pages/_app.js</span>. Например:
+
+<Highlight language="javascript">
+  {`// pages/_app.js
+import 'bootstrap/dist/css/bootstrap.css'
+
+export default function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}`}
+</Highlight>
+
+Для импорта CSS, необходимого для стороннего компонента, вы можете сделать это в своем компоненте. Например:
+
+<Highlight language="javascript">
+  {`// components/ExampleDialog.js
+import { useState } from 'react'
+import { Dialog } from '@reach/dialog'
+import '@reach/dialog/styles.css'
+
+function ExampleDialog(props) {
+  const [showDialog, setShowDialog] = useState(false)
+  const open = () => setShowDialog(true)
+  const close = () => setShowDialog(false)
+
+  return (
+    <div>
+      <button onClick={open}>Open Dialog</button>
+      <Dialog isOpen={showDialog} onDismiss={close}>
+        <button className="close-button" onClick={close}>
+          <VisuallyHidden>Close</VisuallyHidden>
+          <span aria-hidden>×</span>
+        </button>
+        <p>Hello there. I am a dialog</p>
+      </Dialog>
+    </div>
+  )
+}`}
+</Highlight>
 
 <h2>Добавление CSS на уровне компонентов</h2>
 <p>
