@@ -80,34 +80,9 @@ function Home() {
           <a>About Us</a>
         </Link>
       </li>
-    </ul>
-  )
-}
-
-export default Home`}
-</Highlight>
-
-<p>
-При связывании с маршрутом с сегментами динамического пути вы должны предоставить <span className="spanTag">href</span> и <span className="spanTag">as</span>, убедиться что маршрутизатор знает, какой файл JavaScript загружать.
-</p>
-<p className='list'>
- - <span className="spanTag">href</span> - Название страницы в pages каталоге. Например <span className="spanTag">/blog/[slug]</span>.
-</p>
-<p className='list'>
- - <span className="spanTag">as</span> - URL-адрес, который будет отображаться в браузере. Например <span className="spanTag">/blog/hello-world</span>.
-</p>
-
-
-
-<Highlight language="javascript">
-    {`import Link from 'next/link'
-
-function Home() {
-  return (
-    <ul>
       <li>
-        <Link href="/blog/[slug]" as="/blog/hello-world">
-          <a>To Hello World Blog post</a>
+        <Link href="/blog/hello-world">
+          <a>Blog Post</a>
         </Link>
       </li>
     </ul>
@@ -117,23 +92,71 @@ function Home() {
 export default Home`}
 </Highlight>
 
-<span className="spanTag">as</span> может также быть сгенерирован динамически. Например, чтобы показать список сообщений, которые были переданы на страницу:
+В приведенном выше примере у нас есть несколько ссылок, каждая из которых отображает путь <span className="spanTag">(href)</span> на известную страницу:
+<p className='list'>
+  <p> - <span className="spanTag">/</span> → <span className="spanTag">pages/index.js</span></p>
+  <p> - <span className="spanTag">/about</span> → <span className="spanTag">pages/about.js</span></p>
+  <p> - <span className="spanTag">/blog/hello-world</span> → <span className="spanTag">pages/blog/[slug].js</span></p>
+</p>
+
+<h2>Связывание с динамическими путями</h2>
+
+Вы также можете использовать интерполяцию для создания пути, что удобно для динамических сегментов маршрута. Например, чтобы показать список сообщений, которые были переданы компоненту как prop:
 
 <Highlight language="javascript">
-    {`function Home({ posts }) {
+    {`import Link from 'next/link'
+
+function Posts({ posts }) {
   return (
     <ul>
       {posts.map((post) => (
         <li key={post.id}>
-          <Link href="/blog/[slug]" as={'/blog/\${post.slug}'9}>
+          <Link href={'/blog/\${encodeURIComponent(post.slug)}'}>
             <a>{post.title}</a>
           </Link>
         </li>
       ))}
     </ul>
   )
-}`}
+}
+
+export default Posts`}
 </Highlight>
+
+<p className="note"><span className="spanTag">encodeURIComponent</span> используется в примере для обеспечения совместимости пути с utf-8.</p>
+В качестве альтернативы, используя объект URL:
+
+<Highlight language="javascript">
+    {`import Link from 'next/link'
+
+function Posts({ posts }) {
+  return (
+    <ul>
+      {posts.map((post) => (
+        <li key={post.id}>
+          <Link
+            href={{
+              pathname: '/blog/[slug]',
+              query: { slug: post.slug },
+            }}
+          >
+            <a>{post.title}</a>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+export default Posts`}
+</Highlight>
+
+Теперь вместо использования интерполяции для создания пути мы используем объект URL, <span className="spanTag">href</span> где:
+<p className='list'>
+- <span className="spanTag">pathname</span> - это имя страницы в каталоге <span className="spanTag">pages</span>. В этом случае <span className="spanTag">/blog/[slug]</span>.
+- <span className="spanTag">query</span> - это объект с динамическим сегментом. В этом случае<span className="spanTag">slug</span>.
+</p>
+
 
 <h2>Внедрение роутера</h2>
 
