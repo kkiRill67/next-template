@@ -14,16 +14,18 @@ Next.js может обслуживать статические файлы, т�
 </p>
 
 <Highlight language="javascript">
-{`function MyImage() {
-  return <img src="/my-image.png" alt="my image" />
+{`import Image from 'next/image'
+
+function Avatar() {
+  return <Image src="/me.png" alt="me" width="64" height="64" />
 }
 
-export default MyImage`}
+export default Avatar`}
 </Highlight>
         
 
 <p>
-Эта папка также полезна для <span className="spanTag">robots.txt</span> проверки сайта Google и любых других статических файлов (в том числе <span className="spanTag">.html</span>)!
+Эта папка также полезна для <span className="spanTag">robots.txt</span>, <span className="spanTag">favicon.ico</span>, проверки сайта Google и любых других статических файлов (в том числе <span className="spanTag">.html</span>)!
 </p>
 
 <div className='note'>
@@ -31,6 +33,10 @@ export default MyImage`}
 </div>
 <div className='note'>
 <strong>Примечание.</strong> Убедитесь, что у вас нет статического файла с тем же именем, что и у файла в <span className="spanTag">pages/</span> каталоге, так как это приведет к ошибке.
+</div>
+
+<div className='note'>
+<strong>Примечание.</strong> Next.js. будет обслуживать только те ресурсы, которые находятся в каталоге <span className="spanTag">public</span> во время сборки. Файлы, добавленные во время выполнения, будут недоступны. Мы рекомендуем использовать сторонний сервис, например AWS S3, для постоянного хранения файлов.
 </div>
 
             </div>
